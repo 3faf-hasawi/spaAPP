@@ -1,0 +1,85 @@
+﻿@page
+@model spa.Pages.Account.RegisterModel
+@{
+    ViewData["Title"] = "Register";
+}
+
+<div class="auth-container">
+    <div class="auth-card">
+        <h1 class="text-center">Register</h1>
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Admin.Username" class="control-label"></label>
+                <input asp-for="Admin.Username" class="form-control" />
+                <span asp-validation-for="Admin.Username" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Admin.Password" class="control-label"></label>
+                <input asp-for="Admin.Password" class="form-control" type="password" />
+                <span asp-validation-for="Admin.Password" class="text-danger"></span>
+            </div>
+            <div class="form-group text-center">
+                <input type="submit" value="Register" class="btn btn-primary btn-block" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<style>
+    .auth-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background-color: #f4f4f9;
+    }
+
+    .auth-card {
+        background-color: #ffffff;
+        padding: 2rem;
+        border-radius: 12px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        max-width: 400px;
+        width: 100%;
+        text-align: center;
+    }
+
+        .auth-card h1 {
+            margin-bottom: 1.5rem;
+            color: #333333;
+        }
+
+    .form-group {
+        margin-bottom: 1rem;
+    }
+
+    .form-control {
+        padding: 0.5rem;
+        border: 1px solid #dddddd;
+        border-radius: 4px;
+        width: 100%;
+    }
+
+    .btn-primary {
+        background-color: #28a745;
+        border-color: #28a745;
+        color: white;
+        padding: 0.5rem;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+        .btn-primary:hover {
+            background-color: #218838;
+        }
+
+    .btn-block {
+        width: 100%;
+    }
+
+    .text-danger {
+        color: #dc3545;
+    }
+</style>
